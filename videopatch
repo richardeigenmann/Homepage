@@ -1,0 +1,67 @@
+#!/bin/sh 
+#
+# videopatch:       Overrides the video settings
+#
+# Version:      1.0
+#
+#
+### BEGIN INIT INFO
+# Provides: videopatch
+# Required-Start: 
+# Required-Stop:  
+# Default-Start:  3 5
+# Default-Stop:   0 1 2 6
+# Description:    Install 1280 patch.
+### END INIT INFO
+
+
+
+. /etc/rc.status
+
+# First reset status of this service
+rc_reset
+
+# Return values acc. to LSB for all commands but status:
+# 0 - success
+# 1 - misc error
+# 2 - invalid or excess args
+# 3 - unimplemented feature (e.g. reload)
+# 4 - insufficient privilege
+# 5 - program not installed
+# 6 - program not configured
+# 7 - program is not running
+# 
+# Note that starting an already running service, stopping
+# or restarting a not-running service as well as the restart
+# with force-reload (in case signalling is not supported) are
+# considered a success.
+
+
+case "$1" in
+  start)
+	echo -n "Installing 1280 patch... "
+	( /etc/X11/1280patch )
+
+	# Remember status and be verbose
+        rc_status -v
+	;;
+  stop)
+	echo -n "Not uninstalling 1280 patch... "
+
+	# Add your own openserver applications.
+
+	# Remember status and be verbose
+        rc_status -v
+	;;
+  status)
+	;;
+
+  try-restart|restart|reload|force-reload)
+        $0 stop && $0 start
+	rc_status -v
+	;;
+  *)
+	echo "Usage: $0 {start|stop|status|try-restart|restart|force-reload|reload}"
+	exit 1
+esac
+rc_exit

@@ -1,0 +1,45 @@
+/* Document Defaults */
+* {color: black;}
+
+body { font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	background-color: #FFFFFF;
+	text-align: left; }
+
+a:active { color: #0000CC}
+a:hover {background: #fed04c; color: white;}
+a:link { color: #4C3E13}
+a:visited { color: #997C26}
+
+p {text-align: left; padding: 5px;}
+
+
+H1, H2, H3, H4 {font-family: Helvetica, sans-serif;
+	color: #AAAAAA;
+	padding: 8px;
+	margin: 0px;}
+H1 {background-color: #ffe57f;
+	color: #bc7423;}
+H2 {margin-top: 20px;}
+LI {list-style-image: url("africa_bullet.gif"); } /*list-style-type: circle;}*/
+
+
+
+
+hr {color: #AAAAAA}
+code {font-family: Fixed}
+strong {font-weight: bold;}
+
+.Emphasis { font-style: italic;}
+.Strong { font-weight: bold}
+
+#toc EM {color: #bc7423; font-weight: bold; font-style: normal;}
+
+
+#toc {position: fixed; top: 0; bottom: 0; left: 0; width: 150px;
+  background: #ffe57f;}
+#header {position: absolute; top: 0; bottom: 90% ; left: 150px; right: 0;
+  background: #fed04c;}
+#body {position: absolute; top: 10%; bottom: 0; left: 150px; right: 0;
+  overflow: scroll; background: white;}
+

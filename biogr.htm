@@ -3,53 +3,6 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 <title>Pictures of Richard Eigenmann</title>
-<script type="text/javascript">
-	if(location.host=="www.lomumba.ch") var key="ABQIAAAAdVAQNx9Sh-EUZ97e7EL6qxSHNTpRm7jDIZ8XjW72c9re66az5BSvGwyWyfLfEZnoL-qvc3QlYoVtrQ";
-	if(location.host=="richinet.dyndns.org") var  key="ABQIAAAAdVAQNx9Sh-EUZ97e7EL6qxTp21lIOC4B51dCTxaqwkOHCu2RqhTw1WspIl2q1IP440FXDbBYzrUT4Q";
-	document.write('<script src="http://maps.google.com/maps?file=api&v=2&key=' + key + '"'+' type="text/javascript"><\/script>');
-</script>
-
-<script type="text/javascript">
-    function getkey() {
-	var key="ABQIAAAAdVAQNx9Sh-EUZ97e7EL6qxSHNTpRm7jDIZ8XjW72c9re66az5BSvGwyWyfLfEZnoL-qvc3QlYoVtrQ";
-
-	if(location.host=="www.lomumba.ch") var key="ABQIAAAAdVAQNx9Sh-EUZ97e7EL6qxSHNTpRm7jDIZ8XjW72c9re66az5BSvGwyWyfLfEZnoL-qvc3QlYoVtrQ";
-	if(location.host=="richinet.dyndns.org") var  key="ABQIAAAAdVAQNx9Sh-EUZ97e7EL6qxTp21lIOC4B51dCTxaqwkOHCu2RqhTw1WspIl2q1IP440FXDbBYzrUT4Q";
-	alert('Hello' + location.host + key);
-	return key;
-    }
-
-    function load() {
-      if (GBrowserIsCompatible()) {
-
-        var map = new GMap2(document.getElementById("map"));
-        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
-	var geocoder = new GClientGeocoder();
-	var address = "Schaffhauserstrasse 15, Zuerich, Switzerland";
-	geocoder.getLatLng(
-    		address,
-    		function(point) {
-      			if (!point) {
-        			alert("Address " + address + " not found");
-      			} else {
-        			map.setCenter(point, 18);
-        			var marker = new GMarker(point);
-        			map.addOverlay(marker);
-        			marker.openInfoWindowHtml("Schaffhauserstrasse 15");
-      			}
-    		}
-  	);
-
- 	//map.setMapType(G_SATELLITE_MAP);
-	map.setMapType(G_HYBRID_MAP);
-	map.openInfoWindow(map.getCenter(),
-                   document.createTextNode("Schaffhauserstrasse 15"));
-	map.addControl(new GLargeMapControl());
-	map.addControl(new GMapTypeControl());
-	map.addControl(new GScaleControl());
-      }
-    }
-    </script>
 </head>
 
 <body BGCOLOR="#FFFFFF" onload="load()" onunload="GUnload()">
@@ -172,14 +125,7 @@ On the border to Swaziland, October <b>1999</b></font></I></TD>
 
 <TR>
 <TD VALIGN=TOP align=left colspan=2>
-	<p><br><br><b>I live in downtown Z&uuml;rich:</b><p>
-<TR>
-<TD VALIGN=BOTTOM align=left colspan=2>
-	<div id="map" style="width: 1000px; height: 700px"></div>
-</TD>
-<TR>
-<TD colspan="2">
-<br><br><font size="small">Copyright by Richard Eigenmann, 2010 Z&uuml;rich, Switzerland. Last Update 11.10.2010</font></TD>
+<br><br><font size="small">Copyright by Richard Eigenmann, 2013 Z&uuml;rich, Switzerland. Last Update 2.5.2013</font></TD>
 
 </TABLE>
 </body>

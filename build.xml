@@ -5,7 +5,7 @@
 	<import file="../RichiNet/CommonAntTargets.xml" />
     
    <target name="pushAll" depends="cleanup" description="Push to all locations">
-   	<!-- <antcall target="pushLocalhost" /> -->
+   	<antcall target="pushLocalhost" />
    	<antcall target="pushSourceforge" />
    	<!-- <antcall target="pushWarrior" /> -->
    	<!-- <antcall target="pushIndian" /> -->

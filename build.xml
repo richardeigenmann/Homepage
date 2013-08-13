@@ -51,6 +51,14 @@
 	<antcall target="unmountFs" />
    </target>
 
+   <target name="pushGladius" depends="checkroot, cleanup" description="Pushes the files to Katana using sshfs">
+   	<property name="sshDrive" value="root@gladius:/srv/www/htdocs/Homepage" />
+	<property name="targetRoot" value="/mnt" />
+	<antcall target="mountSshFs" />
+	<antcall target="pushFiles" />
+	<antcall target="unmountFs" />
+   </target>
+
 
    <target name="pushLomumba" depends="checkroot, cleanup" description="Pushes the files to Lomumba using sshfs">
    	<property name="sshDrive" value="root@pat.lomumba.ch:/www/lomumba/phpwcms/richi/" />

@@ -70,11 +70,9 @@
 	<antcall target="unmountFs" />
    </target>
 
-	<target name="cleanup" description="Deletes the ~ files that quanta creates" >
-		<delete verbose="${TALK}">
-      			<fileset dir="." includes="*~" defaultexcludes="no" />
-		</delete>
-	</target>
+    <target name="cleanup" description="Deletes the ~ files that quanta
+creates" >         <delete verbose="${TALK}">                 <fileset dir="."
+includes="*~" defaultexcludes="no" />         </delete>     </target>
  
 	<target name="pushFiles" description="Pushes the files to mounted directory">
 		<copy todir="${targetRoot}" verbose="yes">

@@ -27,18 +27,19 @@
     <ng-include src="'navbar.html'"></ng-include>
 
     <div class="container">
-        
+
         <div class="alert-danger" ng-show="false"><h1>Please use a modern browser to view this page.</h1></div>
-        
+
         <div ng-controller="BookController as BookCtrl">
 
-            <div class="alert alert-info col-xs-12" role="alert" 
-                 ng-repeat-start="(year, bookSet) in BookCtrl.books | groupBy: 'ReadYear'">
-                <h3>Computer books read in {{year}}</h3> ({{2014-year}} years ago)
-            </div>
+            <div class="row col-xs-12" ng-repeat="(year, bookSet) in BookCtrl.books | groupBy: 'ReverseYear'">
+                <div class="alert alert-info " role="alert" >
+                    <h3>{{bookSet.length}} Computer books read in {{BookCtrl.BaseYear - year}}</h3> ({{BookCtrl.currentYear - (BookCtrl.BaseYear - year)}} years ago)
+                </div>
 
-            <div ng-repeat-end ng-repeat="book in bookSet | orderBy: ReadDate">
-                <book-widget book-data="book"></book-widget>
+                <div ng-repeat="book in bookSet| orderBy: ReadDate">
+                    <book-widget book-data="book"></book-widget>
+                </div>
             </div>
 
         </div>

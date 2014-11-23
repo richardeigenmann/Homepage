@@ -1,0 +1,25 @@
+{
+  "name": "Homepage",
+  "version": "1.0.0",
+  "homepage": "https://github.com/richardeigenmann/Homepage",
+  "authors": [
+    "Richard Eigenmann <richard.eigenmann@gmail.com>"
+  ],
+  "description": "Version 1 of Richard's Homepage",
+  "main": "bower.json",
+  "license": "CC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.1",
+    "angular": "~1.3.3",
+    "angular-filter": "~0.5.1"
+  }
+}

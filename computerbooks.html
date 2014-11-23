@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="bookApp">
+    <head>
+        <title>Computer Books read by Richard Eigenmann</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <style>
+            thumbnail {
+                /* force the thumbnail box to a height of 400px so that all books align nicely */
+                height: 400px;
+            }
+            .imgBox {
+                /* force the hight of the box around the image to 200px so that the titles alls
+                start at the same height */
+                height: 200px;
+            }
+            img.bookImage {
+                /* define the maximum size to which the book images will be sized */
+                max-height: 200px;
+                max-width: 180px;
+            }
+        </style>
+    </head>
+    <body >
+
+    <ng-include src="'navbar.html'"></ng-include>
+
+    <div class="container">
+        
+        <div class="alert-danger" ng-show="false"><h1>Please use a modern browser to view this page.</h1></div>
+        
+        <div ng-controller="BookController as BookCtrl">
+
+            <div class="alert alert-info col-xs-12" role="alert" 
+                 ng-repeat-start="(year, bookSet) in BookCtrl.books | groupBy: 'ReadYear'">
+                <h3>Computer books read in {{year}}</h3> ({{2014-year}} years ago)
+            </div>
+
+            <div ng-repeat-end ng-repeat="book in bookSet | orderBy: ReadDate">
+                <book-widget book-data="book"></book-widget>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
+    <script src="computerbooks.js"></script>
+</body>
+</html>

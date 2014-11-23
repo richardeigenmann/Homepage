@@ -1,0 +1,13 @@
+<div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="thumbnail">
+        <div class="imgBox">
+            <img class="bookImage" ng-src="{{bookData.ImageUrl}}">
+        </div>
+        <div class="caption">
+            <h4>{{bookData.Title}}</h4>
+            <p>{{bookData.Author}}</p>
+            <p>Completed: {{bookData.ReadDate | date: 'd MMM yyyy'}}</p>
+            <p><a href="{{bookData.BookUrl}}" class="btn btn-primary" role="button">More on the Web</a></p>
+        </div>
+    </div>
+</div>

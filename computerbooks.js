@@ -9,7 +9,9 @@ angular.module('bookApp', ['angular.filter'])
         .controller('BookController', ['getBooks', function (getBooks) {
                 var self = this;
                 self.currentYear = new Date().getFullYear();
-                self.BaseYear = 2050;
+                // use a 5 digit number so that after subtracting a 4 digit number 
+                // we still have an alaphanumerically sortable number
+                self.BaseYear = 20000;  
                 getBooks.query().then(function (response) {
                     var data = response.data;
                     // Using a hack here because Angular always sorts keys alphabetically. So

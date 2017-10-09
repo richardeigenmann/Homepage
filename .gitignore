@@ -1,1 +1,4 @@
 /nbproject/private/
+bower_components
+node_modules
+computerbooks.json

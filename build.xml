@@ -47,9 +47,10 @@
 
 
     <target name="bookslist" description="Generates the books list" >
+        <property file="/richi/Privat/Documents/Homepage.passwords"/>
         <exec executable="/usr/bin/php">
             <arg value = "generateComputerbooks.json.php"/>
-            <arg value = "password"/>
+            <arg value = "${bookslist-passowrd}"/>
         </exec>
     </target>
 </project>

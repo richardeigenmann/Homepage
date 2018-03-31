@@ -1,7 +1,7 @@
 <?php
 // run from the command line as php generateComputerbooks.json.php dbpassword
-$dbhost = "gladius";
-$dbuser = "root";
+$dbhost = "database";
+$dbuser = "richi";
 $dbname = "richi";
 $dbpass = $argv[1];
 

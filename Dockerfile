@@ -13,7 +13,7 @@ COPY Offline* /var/www/
 
 COPY generateComputerbooks.json.php /var/www
 WORKDIR /var/www
-RUN echo "192.168.1.104 gladius" >> /etc/hosts && php generateComputerbooks.json.php pw && rm generateComputerbooks.json.php
+#RUN php generateComputerbooks.json.php pw && rm generateComputerbooks.json.php
 
 RUN ls -ltr /var/www
 

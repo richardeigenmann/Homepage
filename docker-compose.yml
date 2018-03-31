@@ -1,21 +1,24 @@
 # docker-compose up -d --build
 # based on https://medium.com/@lojorider/docker-with-cgi-perl-a4558ab6a329
+# docker exec -it  homepage_web bash
 
-version: '2'
+version: '3.4'
 services:
     web:
         container_name: homepage_web
         build:
             context: .
+            network: default
         volumes:
             - ./weblog:/var/log/nginx/web
         ports:
             - "8084:80"
-        extra_hosts:
-            - "gladius:192.168.1.104"
-        networks:
-            - richinet-network
+        #extra_hosts:
+        #    - "gladius:192.168.1.104"
+        #networks:
+        #    - richinet-network
 
 networks:
-   richinet-network:
-       driver: bridge
+   default:
+       external:
+          name: RichiNet

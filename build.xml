@@ -41,16 +41,24 @@
 
     <target name="pushFiles" description="Pushes the files to mounted directory">
         <copy todir="${targetRoot}" verbose="yes">
-            <fileset dir="." excludes="nbproject/,node_modules/,bower_components/,**/build.xml,**/bower.json,**index_old.htm,generateComputerbooks.json.php"/>
+            <fileset dir="." excludes="weblog/,nbproject/,node_modules/,bower_components/,**/build.xml,**/bower.json,**index_old.htm,generateComputerbooks.json.php,**/Dockerfile,**/vhost.conf,**docker-compose.yml"/>
         </copy>
     </target>
 
 
     <target name="bookslist" description="Generates the books list" >
         <property file="/richi/Privat/Documents/Homepage.passwords"/>
-        <exec executable="/usr/bin/php">
+        <exec executable="/usr/bin/docker">
+            <arg value = "exec"/>
+            <arg value = "homepage_web"/>
+            <arg value = "php"/>
             <arg value = "generateComputerbooks.json.php"/>
-            <arg value = "${bookslist-passowrd}"/>
+            <arg value = "${bookslist-password}"/>
+        </exec>
+        <exec executable="/usr/bin/docker">
+            <arg value = "cp"/>
+            <arg value = "homepage_web:/var/www/computerbooks.json"/>
+            <arg value = "."/>
         </exec>
     </target>
 </project>

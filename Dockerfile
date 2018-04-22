@@ -13,9 +13,11 @@ COPY Offline* /var/www/
 
 COPY generateComputerbooks.json.php /var/www
 WORKDIR /var/www
-#RUN php generateComputerbooks.json.php pw && rm generateComputerbooks.json.php
+
+# to refresh the computerbooks.json
+# docker exec -it homepage_web php /var/www/generateComputerbooks.json.php pw
+# docker cp homepage_web:/var/www/computerbooks.json .
 
 RUN ls -ltr /var/www
 
 CMD nginx -g 'daemon off;'
-#ENTRYPOINT ["bash"]

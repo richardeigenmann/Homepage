@@ -1,7 +1,7 @@
 # docker build -t richardeigenmann/richinet .
 # docker run -it --rm --hostname richinet -v /richi/Src/RichiNet/weblog:/var/log/nginx/web -p8082:80 richardeigenmann/richinet
 
-FROM nginx:1.13
+FROM nginx:latest
 RUN apt-get clean && apt-get update && apt-get install -y \
   php \
   php-mysqli \

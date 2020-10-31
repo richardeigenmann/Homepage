@@ -21,7 +21,8 @@ H1, H2, H3, H4 {font-family: Helvetica, sans-serif;
 H1 {background-color: #ffe57f;
 	color: #bc7423;}
 H2 {margin-top: 20px;}
-LI {list-style-image: url("africa_bullet.gif"); } /*list-style-type: circle;}*/
+LI {list-style-image: url("africa_bullet.gif");
+	margin-top: 8px; } /*list-style-type: circle;}*/
 
 
 

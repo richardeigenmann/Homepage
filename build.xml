@@ -1,36 +1,41 @@
 <?xml version="1.0"?>
 <project name="Richard's Homepage" default="pushAll">
     <property name="TALK" value="true" />
-    <property name="sshPort" value="-p22"/>
-    <import file="../RichiNet/CommonAntTargets.xml" />
 
     <target name="pushAll" depends="cleanup" description="Push to all locations">
-        <antcall target="pushLocalhost" />
         <antcall target="pushSourceforge" />
-        <antcall target="pushGladius" />
     </target>
 
-    <target name="pushLocalhost" depends="checkroot, cleanup" description="Pushes the files to the Localhost">
-        <property name="targetRoot" value="/srv/www/htdocs/Homepage" />
-        <antcall target="pushFiles" />
+    <target name="pushSourceforge" depends="cleanup, bookslist" description="Pushes the files to Sourceforge">
+        <exec executable="/usr/bin/rsync">
+            <arg value = "-vvvvv"/>
+            <arg value = "--progress"/>
+            <arg value = "--exclude"/>
+            <arg value = "bower_components"/>
+            <arg value = "--exclude"/>
+            <arg value = "nbproject"/>
+            <arg value = "--exclude"/>
+            <arg value = "weblog"/>
+            <arg value = "--exclude"/>
+            <arg value = ".gitignore"/>
+            <arg value = "--exclude"/>
+            <arg value = "bower.json"/>
+            <arg value = "--exclude"/>
+            <arg value = "build.xml"/>
+            <arg value = "--exclude"/>
+            <arg value = "docker-compose.yml"/>
+            <arg value = "--exclude"/>
+            <arg value = "Dockerfile"/>
+            <arg value = "--exclude"/>
+            <arg value = "generateComputerbooks.json.php"/>
+            <arg value = "--exclude"/>
+            <arg value = "Readme.md"/>
+            <arg value = "--exclude"/>
+            <arg value = "Template.htm"/>
+            <arg value = "/richi/Src/Homepage/*"/>
+            <arg value = "richieigenmann@frs.sourceforge.net:/home/user-web/richieigenmann/htdocs/"/>
+        </exec>
     </target>
-
-    <target name="pushSourceforge" depends="cleanup, bookslist" description="Pushes the files to Sourceforge using sshfs">
-        <property name="sshDrive" value="richieigenmann@frs.sourceforge.net:/home/user-web/richieigenmann/htdocs" />
-        <property name="targetRoot" value="/mnt" />
-        <antcall target="mountSshFs" />
-        <antcall target="pushFiles" />
-        <antcall target="unmountFs" />
-    </target>
-
-    <target name="pushGladius" depends="checkroot, cleanup, bookslist" description="Pushes the files to Katana using sshfs">
-        <property name="sshDrive" value="root@gladius:/srv/www/htdocs/Homepage" />
-        <property name="targetRoot" value="/mnt" />
-        <antcall target="mountSshFs" />
-        <antcall target="pushFiles" />
-        <antcall target="unmountFs" />
-    </target>
-
 
     <target name="cleanup" description="Deletes the ~ files that quanta creates" >
         <delete verbose="${TALK}">
@@ -39,25 +44,20 @@
         </delete>
     </target>
 
-    <target name="pushFiles" description="Pushes the files to mounted directory">
-        <copy todir="${targetRoot}" verbose="yes">
-            <fileset dir="." excludes="weblog/,nbproject/,node_modules/,bower_components/,**/build.xml,**/bower.json,**index_old.htm,generateComputerbooks.json.php,**/Dockerfile,**/vhost.conf,**docker-compose.yml"/>
-        </copy>
-    </target>
-
 
     <target name="bookslist" description="Generates the books list" >
         <property file="/richi/Privat/Documents/Homepage.passwords"/>
         <exec executable="/usr/bin/docker">
             <arg value = "exec"/>
-            <arg value = "homepage_web"/>
+	    <!--<arg value = "homepage_web"/>-->
+            <arg value = "d1a71594275f"/>
             <arg value = "php"/>
             <arg value = "generateComputerbooks.json.php"/>
             <arg value = "${bookslist-password}"/>
         </exec>
         <exec executable="/usr/bin/docker">
             <arg value = "cp"/>
-            <arg value = "homepage_web:/var/www/computerbooks.json"/>
+            <arg value = "d1a71594275f:/var/www/computerbooks.json"/>
             <arg value = "."/>
         </exec>
     </target>

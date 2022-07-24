@@ -1,57 +1,82 @@
-    <div class="navbar-wrapper">
-        <div class="container">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Richard Eigenmann</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://richardeigenmann.github.io/RezeptsammlungNg/index.html">Rezeptsammlung</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="videos.html">Recommended Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://richardeigenmann.blogspot.ch/">Blog</a>
+                </li>
 
-            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">Richard Eigenmann</a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="biogr.htm">Picture Bio</a></li>
-                            <li><a href="http://richardeigenmann.blogspot.ch/">Blog</a></li>
-                            <li><a href="favorite.htm">Favorites</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                        <!-- See page for author [Public domain], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AJava_logo_and_wordmark.svg" -->
-                                        <li><a href="https://j-po.sourceforge.io/"><img width="16" alt="Java logo and wordmark" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Java_logo_and_wordmark.svg/32px-Java_logo_and_wordmark.svg.png"/> Java Picture Organizer</a></li>
-                                        <li><a href="http://richardeigenmann.github.io/TagCloud"><img width="16" alt="Java logo and wordmark" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Java_logo_and_wordmark.svg/32px-Java_logo_and_wordmark.svg.png"/> Tag Cloud</a></li>
-                                        <li class="divider"></li>
-                                        <!-- W3C [CC-BY-3.0 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AHTML5_logo_and_wordmark.svg"><-->
-                                        <li><a href="http://richardeigenmann.github.io/Sudoku"><img width="16" height="16"alt="HTML5 logo and wordmark" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/32px-HTML5_logo_and_wordmark.svg.png"/> Sudoku Visualizer</a></li>
-                                        <li><a href="https://richardeigenmann.github.io/RezeptsammlungNg"><img width="16" height="16"alt="HTML5 logo and wordmark" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/32px-HTML5_logo_and_wordmark.svg.png"/> Rezeptsammlung</a></li>
-                                        <li class="divider"></li>
-                                        <!-- Thanks be to Google for the logo and the AngularJs framework! -->
-                                        <li><a href="computerbooks.html"><img width="16" alt="AngularJs" src="https://raw.githubusercontent.com/angular/angular.js/master/images/logo/AngularJS-Shield.exports/AngularJS-Shield-small.png"/> All the computer books I have read</a></li>
-                                        <li class="divider"></li>
-                                        <!-- The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License. [CC-BY-3.0 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AAndroid_robot.svg" -->
-                                        <li><a href="recipesandroid.htm"><img width="16" alt="Android robot" src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/32px-Android_robot.svg.png"/> Rezeptsammlung</a></li>
-                                        <li class="divider"></li>
-                                        <!-- Larry Ewing [Attribution or GPL (http://www.gnu.org/licenses/gpl.html)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3ANewTux.svg"> -->
-                                        <li><a href="P5020D.htm"><img width="16" alt="NewTux" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b0/NewTux.svg/32px-NewTux.svg.png"/> SuSE Linux on a Fujitsu P5020D Lifebook</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Travel <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="brussels.htm">Belgium tips</a></li>
-                                    <li><a href="SATips.htm">South Africa tips</a></li>
-                                    <li><a href="sa.htm">South Africa travels (2004)</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="mailto:mailto:richard.eigenmann@gmail.com">richard.eigenmann@gmail.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownProjects" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Projects
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownProjects">
+                        <!-- See page for author [Public domain], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AJava_logo_and_wordmark.svg" -->
+                        <li><a class="dropdown-item" href="http://j-po.sourceforge.net/"><img width="16" alt="Java logo"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Crystal_Clear_mimetype_source_java.png/120px-Crystal_Clear_mimetype_source_java.png" />
+                            Java Picture Organizer</a></li> 
+                        <li><a class="dropdown-item" href="http://richardeigenmann.github.io/TagCloud"><img width="16"
+                                alt="Java logo and wordmark"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Crystal_Clear_mimetype_source_java.png/120px-Crystal_Clear_mimetype_source_java.png" />
+                            Tag Cloud</a></li>
+                        <!-- W3C [CC-BY-3.0 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AHTML5_logo_and_wordmark.svg">-->
+                        <li><a class="dropdown-item" href="http://richardeigenmann.github.io/Sudoku"><img width="16"
+                                height="16" alt="HTML5 logo and wordmark"
+                                src="//upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/32px-HTML5_logo_and_wordmark.svg.png" />
+                            Sudoku Visualizer</a></li>
+                        <!-- Thanks be to Google for the logo and the AngularJs framework! -->
+                        <li><a class="dropdown-item" href="computerbooks.html"><img width="16" alt="AngularJs"
+                                src="https://raw.githubusercontent.com/angular/angular.js/master/images/logo/AngularJS-Shield.exports/AngularJS-Shield-small.png" />
+                            All the computer books I have read</a></li>
+                        <li><a class="dropdown-item"
+                            href="http://richardeigenmann.github.io/DrawStars/presentation.html"><img width="16"
+                                alt="AngularJs"
+                                src="https://raw.githubusercontent.com/angular/angular.js/master/images/logo/AngularJS-Shield.exports/AngularJS-Shield-small.png" />
+                            DrawStars.js</a></li>
+                        <!-- The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the Creative Commons 3.0 Attribution License. [CC-BY-3.0 (http://creativecommons.org/licenses/by/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AAndroid_robot.svg" -->
+                        <li><a class="dropdown-item" href="recipesandroid.htm"><img width="16" alt="Android robot"
+                                src="//upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/32px-Android_robot.svg.png" />
+                            Rezeptsammlung</a></li>
+                    </ul>
+                </li>
 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTravel" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Travel
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownTravel">
+                        <li><a class="dropdown-item" href="brussels.htm">Belgium tips</a></li>
+                        <li><a class="dropdown-item" href="SATips.htm">South Africa tips</a></li>
+                        <li><a class="dropdown-item" href="sa.htm">South Africa travels (2004)</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMore" role="button"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMore">
+                        <li><a class="dropdown-item" href="biogr.htm">Picture Bio</a></li>
+                        <li><a class="dropdown-item"
+                            href="mailto:mailto:richard.eigenmann@gmail.com">richard.eigenmann@gmail.com</a></li>
+                    </ul>
+                </li>
+
+            </ul>
         </div>
     </div>
+</nav>

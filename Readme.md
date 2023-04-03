@@ -4,7 +4,7 @@
 
 ```bash
 su
-JAVA_HOME=/usr/java/zulu17.32.13-ca-jdk17.0.2-linux_x64/
+JAVA_HOME=/usr/lib/jvm/zulu-19/
 ant pushSourceforge
 docker-compose up -d --build
 
